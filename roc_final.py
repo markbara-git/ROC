@@ -18,7 +18,7 @@ data = pd.read_csv(input,usecols=['geopixel',
 data['cve_css_total_score'] = data['cve_css_total_score'].values * 0.1
 data = data.groupby('geopixel').mean().reset_index()
 data['score'] = data['cve_css_total_score'].apply(lambda x: 1 if x >= 0.5 else 0)
-data['score2'] = 1
+data['score2'] = data['os_os_security_assessment'].apply(lambda x: 1 if x >= 0.5 else 0)
 #data.to_csv('input\\slim.csv',index=False)
 #print(data)
 
