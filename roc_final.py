@@ -26,11 +26,10 @@ data['score'] = data['cve_css_total_score'].apply(lambda x: 1 if x >= 0.5 else 0
 
 #append the 'score2' column based on the 'os_os_security_assessment'
 data['score2'] = data['os_os_security_assessment'].apply(lambda x: 1 if x >= 0.5 else 0)
+
+#save modified data into CSV file
 #data.to_csv('input\\slim.csv',index=False)
 #print(data)
-
-#data.to_csv("input\\slim10.csv",index=False)
-
 
 X = data[['score2',
           'osi_model_layer1_security_posture_assessment',
