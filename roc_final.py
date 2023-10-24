@@ -50,9 +50,6 @@ y_pred = log_regression.predict(X)
 #create confusion matrix
 confusionMatrix = confusion_matrix(y,y_pred)
 
-y_pred_proba = log_regression.predict_proba(X_test)[::,1]
-fpr, tpr, _ = roc_curve(y_test, y_pred_proba)
-
 #define metrics
 y_pred_proba = log_regression.predict_proba(X_test)[::,1]
 fpr, tpr, _ = roc_curve(y_test,  y_pred_proba)
