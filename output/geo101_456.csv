@@ -1,0 +1,5 @@
+geopixel,osi_model_layer1_security_posture_assessment,osi_model_layer2_security_posture_assessment,osi_model_layer3_security_posture_assessment,cve_css_total_score,os_os_security_assessment
+101_456,0.57,0.48,0.6,0.47571428571429,0.93333333333333
+101_456,0.75,0.89,0.89,0.65857142857143,1.0
+101_456,0.46,0.68,0.44,0.47714285714286,1.0
+101_456,0.56,0.61,0.57,0.49714285714286,1.0
