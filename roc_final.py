@@ -22,16 +22,18 @@ data['cve_css_total_score'] = data['cve_css_total_score'].values * 0.1
 #group data by 'goepixel'
 data = data.groupby('geopixel')
 
+#lists to store data
 geolist = []
 auclist = []
 
+#spliting by geopixel into seperate CSV files
 for name, group in data:
     group.to_csv(output+f'{name}.csv',index=False)
     geolist.append(output+f'{name}.csv')
 
+#proccesing each geopixel
 for geo in geolist:
     data = pd.read_csv(geo)
-    #if data.shape[0] >= 50:
     try:
         #append the 'score' column based on 'cve_css_total_score
         data['score'] = data['cve_css_total_score'].apply(lambda x: 1 if x >= 0.5 else 0)
@@ -62,13 +64,16 @@ for geo in geolist:
         fpr, tpr, _ = roc_curve(y_test,  y_pred_proba)
 
         auc = roc_auc_score(y_test, y_pred_proba)
-        auclist.append(auc)
-    #else:
+        auclist.append(auc)    
     except:
+        #if not enough date then set the AUC value to -1
         auclist.append(-1)
 
+#formating the geolist
 geolist = [s[:-4] for s in geolist]
 geolist = [s[10:] for s in geolist]
+
+#creating the CSV output
 df = pd.DataFrame({'geopixel': geolist, 'auc': auclist})
 df.to_csv('output\\output.csv',index=False)
 
