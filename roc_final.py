@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from sklearn.metrics import roc_curve, roc_auc_score, auc, confusion_matrix
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
@@ -6,7 +7,7 @@ from sklearn.model_selection import train_test_split
 
 #path to input csv
 input = "input\\input-we.csv"
-output = "output\\geo"
+output = "output\\"
 
 #get the related columns
 data = pd.read_csv(input,usecols=['geopixel', 
@@ -64,18 +65,21 @@ for geo in geolist:
         fpr, tpr, _ = roc_curve(y_test,  y_pred_proba)
 
         auc = roc_auc_score(y_test, y_pred_proba)
-        auclist.append(auc)    
+        auclist.append(auc)        
     except:
         #if not enough date then set the AUC value to -1
         auclist.append(-1)
+    
+    #deleting temp csv    
+    os.remove(geo)
 
 #formating the geolist
 geolist = [s[:-4] for s in geolist]
-geolist = [s[10:] for s in geolist]
+geolist = [s[7:] for s in geolist]
 
 #creating the CSV output
 df = pd.DataFrame({'geopixel': geolist, 'auc': auclist})
-df.to_csv('output\\output.csv',index=False)
+df.to_csv(output+'output.csv',index=False)
 
 
 #create ROC curve
