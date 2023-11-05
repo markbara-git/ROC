@@ -79,7 +79,7 @@ geolist = [s[7:] for s in geolist]
 
 #creating the CSV output
 df = pd.DataFrame({'geopixel': geolist, 'auc': auclist})
-df.to_csv(output+'output.csv',index=False)
+df.to_csv(output+'output-nr.csv',index=False)
 
 
 #create ROC curve
