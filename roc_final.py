@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
 #path to input csv
-input = "input\\input-we.csv"
+input = "input\\input-0-nr.csv"
 output = "output\\"
 
 #get the related columns
@@ -67,7 +67,7 @@ for geo in geolist:
         auc = roc_auc_score(y_test, y_pred_proba)
         auclist.append(auc)        
     except:
-        #if not enough date then set the AUC value to -1
+        #if not enough data then set the AUC value to -1
         auclist.append(-1)
     
     #deleting temp csv    
