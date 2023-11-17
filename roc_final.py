@@ -68,7 +68,7 @@ for geo in geolist:
         auclist.append(auc)        
     except:
         #if not enough data then set the AUC value to -1
-        auclist.append(-1)
+        auclist.append(0)
     
     #deleting temp csv    
     os.remove(geo)
