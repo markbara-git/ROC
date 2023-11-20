@@ -67,7 +67,7 @@ for geo in geolist:
         auc = roc_auc_score(y_test, y_pred_proba)
         auclist.append(auc)        
     except:
-        #if not enough data then set the AUC value to -1
+        #if not enough data then set the AUC value to 0
         auclist.append(0)
     
     #deleting temp csv    
@@ -79,6 +79,7 @@ geolist = [s[7:] for s in geolist]
 
 #creating the CSV output
 df = pd.DataFrame({'geopixel': geolist, 'auc': auclist})
+df = df.sort_values(by='geopixel', ascending=True)
 df.to_csv(output+'output-nr.csv',index=False)
 
 
