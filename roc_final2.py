@@ -49,16 +49,16 @@ for geo in geolist:
         X = data[['score2',
                   'osi_model_layer1_security_posture_assessment',
                   'osi_model_layer2_security_posture_assessment',
-                  'osi_model_layer3_security_posture_assessment',
-                  'osi_model_layer4_security_posture_assessment',
-                  'osi_model_layer5_security_posture_assessment',
-                  'osi_model_layer6_security_posture_assessment',
-                  'osi_model_layer7_security_posture_assessment',
+                  'osi_model_layer3_security_posture_assessment',                  
+                  #'osi_model_layer4_security_posture_assessment',
+                  #'osi_model_layer5_security_posture_assessment',
+                  #'osi_model_layer6_security_posture_assessment',
+                  #'osi_model_layer7_security_posture_assessment',
                   'os_os_security_assessment']]
         y = data['score']
         
         #train data
-        X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.5, random_state=0)
+        X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.6, random_state=0)
 
         #Logistic Regresion
         log_regression = LogisticRegression()
