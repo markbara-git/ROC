@@ -50,10 +50,10 @@ for geo in geolist:
                   'osi_model_layer1_security_posture_assessment',
                   'osi_model_layer2_security_posture_assessment',
                   'osi_model_layer3_security_posture_assessment',                  
-                  #'osi_model_layer4_security_posture_assessment',
-                  #'osi_model_layer5_security_posture_assessment',
-                  #'osi_model_layer6_security_posture_assessment',
-                  #'osi_model_layer7_security_posture_assessment',
+                  'osi_model_layer4_security_posture_assessment',
+                  'osi_model_layer5_security_posture_assessment',
+                  'osi_model_layer6_security_posture_assessment',
+                  'osi_model_layer7_security_posture_assessment',
                   'os_os_security_assessment']]
         y = data['score']
         
