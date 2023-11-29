@@ -22,7 +22,7 @@ data_rest = pd.read_csv(input,usecols=['osi_model_layer2_security_posture_assess
                                        'ia_integrity_assessment',
                                        'ia_availability_assessment'])
 
-data_rest = data_rest.fillna(5)
+data_rest = data_rest.fillna(6)
 
 #normalize the values in columns
 data_rest['osi_model_layer2_security_posture_assessment'] = data_rest['osi_model_layer2_security_posture_assessment'] * 0.1
@@ -34,7 +34,7 @@ data_rest['ia_availability_assessment'] = data_rest['ia_availability_assessment'
 
 #combine both data
 data = pd.concat([data,data_rest], axis=1)
-
+data.to_csv("normalized_input.csv")
 #remove not needed dataframe
 del data_rest
 
