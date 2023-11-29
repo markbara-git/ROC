@@ -6,18 +6,45 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
 #path to input csv
-input = "input\\input-0-nr.csv"
+input = "input\\input-0-10.csv"
 output = "output\\"
 
 #get the related columns
-data = pd.read_csv(input,usecols=['geopixel', 
-                                  'cve_css_total_score',
-                                  'osi_model_layer1_security_posture_assessment',
-                                  'osi_model_layer2_security_posture_assessment',
-                                  'osi_model_layer3_security_posture_assessment',
-                                  'os_os_security_assessment'])
+data = pd.read_csv(input,usecols=['geopixel'])
+data = data.fillna("0_0")
 
-data = data.fillna(0.5)
+data_rest = pd.read_csv(input,usecols=['osi_model_layer2_security_posture_assessment',
+                                       'osi_model_layer4_security_posture_assessment',
+                                       'osi_model_layer6_security_posture_assessment',
+                                       'ia_confidentiality_assessment',
+                                       'ia_integrity_assessment',
+                                       'ia_availability_assessment'])
+
+data_rest = data_rest.fillna(5)
+print(data_rest)
+#normalize the values in columns
+data_rest['osi_model_layer2_security_posture_assessment'] = data_rest['osi_model_layer2_security_posture_assessment'] * 0.1
+data_rest['osi_model_layer4_security_posture_assessment'] = data_rest['osi_model_layer4_security_posture_assessment'] * 0.1
+data_rest['osi_model_layer6_security_posture_assessment'] = data_rest['osi_model_layer6_security_posture_assessment'] * 0.1
+data_rest['ia_confidentiality_assessment'] = data_rest['ia_confidentiality_assessment'] * 0.1
+data_rest['ia_integrity_assessment'] = data_rest['ia_integrity_assessment'] * 0.1
+data_rest['ia_availability_assessment'] = data_rest['ia_availability_assessment'] * 0.1
+
+data = pd.concat([data,data_rest], axis=1)
+
+print(data)
+"""
+for column in ['osi_model_layer2_security_posture_assessment',
+               'osi_model_layer4_security_posture_assessment',
+               'osi_model_layer6_security_posture_assessment',
+               'ia_confidentiality_assessment',
+               'ia_integrity_assessment',
+               'ia_availability_assessment']:    
+    data_rest[column] = data_rest[column].values * 0.1
+
+data = pd.concat([data,data_rest], axis=1)
+
+print(data)
 
 #prepare the 'cve_css_total_score'
 data['cve_css_total_score'] = data['cve_css_total_score'].values * 0.1
@@ -83,3 +110,4 @@ geolist = [s[7:] for s in geolist]
 df = pd.DataFrame({'geopixel': geolist, 'auc': auclist})
 df = df.sort_values(by='geopixel', ascending=True)
 df.to_csv(output+'output-nr.csv',index=False)
+"""
