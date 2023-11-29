@@ -83,12 +83,3 @@ geolist = [s[7:] for s in geolist]
 df = pd.DataFrame({'geopixel': geolist, 'auc': auclist})
 df = df.sort_values(by='geopixel', ascending=True)
 df.to_csv(output+'output-nr.csv',index=False)
-
-
-#create ROC curve
-#plt.plot(fpr,tpr,label="AUC="+str(auc))
-#plt.ylabel('True Positive Rate')
-#plt.xlabel('False Positive Rate')
-#plt.legend(loc=4)
-#plt.show()
-
