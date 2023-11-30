@@ -1,11 +1,11 @@
 scan_id,created_at,latitude,longitude,geopixel,scanned_device_id,name,type,model,os_version,osi_model_layer1_security_posture_assessment,osi_model_layer2_security_posture_assessment,osi_model_layer3_security_posture_assessment,osi_model_layer4_security_posture_assessment,osi_model_layer5_security_posture_assessment,osi_model_layer6_security_posture_assessment,osi_model_layer7_security_posture_assessment,cve_css_total_score,os_os_security_assessment,os_mta_security_assessment,os_web_server_security_assessment,gdpr_processing_probability,gdpr_profiling_probability,ec_council_attack_phase_detected_reconnaissance,ec_council_attack_phase_detected_scanning,ia_confidentiality_assessment,ia_authenticity_assessment,ia_integrity_assessment,ia_availability_assessment,device_total_security_score
-438089,1700480813,50.6838395,17.8740154,,1369536,oriole,,"Pixel 6","14 UP1A.231105.003",,7,,,,7,,0,,,,,,,,7,7,7,7,7
-438089,1700480813,50.6838395,17.8740154,,1369537,"TD-W8961N IGD TD-W8961N",,TD-W8961N,,,7,,8,,7,,0,,,7,,,,,7,7,7,7,7
-438089,1700480813,50.6838395,17.8740154,,1369538,,,,,,7,,,,7,,0,,,,,,,,7,7,7,7,7
-438089,1700480813,50.6838395,17.8740154,,1369539,,,,,,7,,7,,7,,0,,,7,,,,,7,7,7,7,7
-438089,1700480813,50.6838395,17.8740154,,1369540,,,,,,7,,,,7,,0,,,,,,,,7,7,7,7,7
-438089,1700480813,50.6838395,17.8740154,,1369541,,,,,,7,,8,,7,,0,,,,,,,,7,7,7,7,7
-438089,1700480813,50.6838395,17.8740154,,1369542,,,,,,7,,,,7,,0,,,,,,,,7,7,7,7,7
-438089,1700480813,50.6838395,17.8740154,,1369543,,,,,,7,,,,7,,0,,,,,,,,7,7,7,7,7
-438089,1700480813,50.6838395,17.8740154,90_423,1369544,,,,,,7,,,,7,,0,,,,,,,,7,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,,1369536,oriole,,"Pixel 6","14 UP1A.231105.003",,,,,,,,0,,,,,,,,,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,,1369537,"TD-W8961N IGD TD-W8961N",,TD-W8961N,,,,,8,,,,0,,,7,,,,,,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,,1369538,,,,,,,,,,7,,0,,,,,,,,,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,,1369539,,,,,,,,7,,7,,0,,,7,,,,,,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,,1369540,,,,,,,,,,7,,0,,,,,,,,,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,,1369541,,,,,,,,8,,7,,0,,,,,,,,,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,,1369542,,,,,,,,,,7,,0,,,,,,,,7,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,,1369543,,,,,,,,,,7,,0,,,,,,,,7,7,7,7,7
+438089,1700480813,50.6838395,17.8740154,90_423,1369544,,,,,,,,,,7,,0,,,,,,,,7,7,7,7,7
 438089,1700480813,50.6838395,17.8740154,90_423,1369545,"AC1200 Dual Band Wi-Fi Router 1.0",,1.0,,,7,,7,,7,,0,,,7,,,,,7,7,7,7,7
