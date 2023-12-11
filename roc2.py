@@ -48,7 +48,7 @@ print(data.head())
 
 #data = data.fillna(value=np.random.RandomState().uniform(0,1))
 
-data.to_csv("normalized_input-nowe.csv")
+data.to_csv("normalized_input-nowe.csv", index=False)
 
 #data.to_csv(output+'output-0-10.csv',index=False)
 
