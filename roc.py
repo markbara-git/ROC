@@ -13,7 +13,7 @@ def replace_nan_with_random(value):
         return value
 
 #path to input csv
-input = "input\\input-0.csv"
+input = "input\\input-0-nowe.csv"
 output = "output\\"
 testsize = 0.3
 
@@ -24,9 +24,13 @@ data = pd.read_csv(input,usecols=['geopixel',
                                   'osi_model_layer6_security_posture_assessment',
                                   'ia_confidentiality_assessment',
                                   'ia_integrity_assessment',
-                                  'ia_availability_assessment'])
+                                  'ia_availability_assessment'], na_values='')
+
+#data.dropna(subset=['device_total_security_score'])
 
 data['geopixel'] =  data['geopixel'].fillna("1_1")
+
+#print(data.head())
 
 #data = data.fillna(value=np.random.uniform(0,10))
 
@@ -145,5 +149,5 @@ geolist = [s[7:] for s in geolist]
 #creating the CSV output
 df = pd.DataFrame({'geopixel': geolist, 'auc': auclist})
 df = df.sort_values(by='geopixel', ascending=True)
-df.to_csv(output+'output-0.csv',index=False)
+df.to_csv(output+'output-0-nowe.csv',index=False)
 #test
