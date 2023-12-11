@@ -146,3 +146,4 @@ geolist = [s[7:] for s in geolist]
 df = pd.DataFrame({'geopixel': geolist, 'auc': auclist})
 df = df.sort_values(by='geopixel', ascending=True)
 df.to_csv(output+'output-0.csv',index=False)
+#test
