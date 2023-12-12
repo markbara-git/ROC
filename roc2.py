@@ -29,6 +29,14 @@ data = pd.read_csv(input,usecols=['geopixel',
 
 data = data.dropna(subset=['device_total_security_score'])
 
+#12.12.2023
+#data = data.dropna(subset='osi_model_layer2_security_posture_assessment')
+#data = data.dropna(subset='osi_model_layer6_security_posture_assessment')
+#data = data.dropna(subset='ia_confidentiality_assessment')
+#data = data.dropna(subset='ia_authenticity_assessment')
+#data = data.dropna(subset='ia_integrity_assessment')
+#/12.12.2023
+
 data['geopixel'] =  data['geopixel'].fillna("1_1")
 
 #data = data.fillna(value=np.random.uniform(0,10))
