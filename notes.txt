@@ -1,1 +1,0 @@
-input = "input\\input-we-1000.csv"
